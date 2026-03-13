@@ -1,0 +1,99 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" width="400" height="400">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0D2A3D"/>
+      <stop offset="100%" stop-color="#0D1B2A"/>
+    </radialGradient>
+    <radialGradient id="globeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00B4D8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#00B4D8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#0077B6"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00B4D8"/>
+      <stop offset="100%" stop-color="#0077B6" stop-opacity="0.4"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="circleClip">
+      <circle cx="200" cy="180" r="110"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="196" fill="url(#bgGrad)" stroke="#00B4D8" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Outer glow ring -->
+  <circle cx="200" cy="200" r="196" fill="none" stroke="#00B4D8" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Ambient glow behind globe -->
+  <circle cx="200" cy="180" r="130" fill="url(#globeGlow)"/>
+
+  <!-- ── GLOBE ── -->
+  <!-- Globe base -->
+  <circle cx="200" cy="180" r="108" fill="none" stroke="url(#tealGrad)" stroke-width="2" filter="url(#glow)"/>
+  <circle cx="200" cy="180" r="108" fill="#001A2D" opacity="0.85"/>
+
+  <!-- Globe latitude lines -->
+  <ellipse cx="200" cy="180" rx="108" ry="28"  fill="none" stroke="#00B4D8" stroke-width="1" opacity="0.5"/>
+  <ellipse cx="200" cy="180" rx="108" ry="60"  fill="none" stroke="#00B4D8" stroke-width="1" opacity="0.4"/>
+  <ellipse cx="200" cy="180" rx="108" ry="92"  fill="none" stroke="#00B4D8" stroke-width="1" opacity="0.3"/>
+  <!-- Equator (brighter) -->
+  <line x1="92" y1="180" x2="308" y2="180" stroke="#00B4D8" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Globe longitude lines -->
+  <ellipse cx="200" cy="180" rx="30"  ry="108" fill="none" stroke="#00B4D8" stroke-width="1" opacity="0.4" clip-path="url(#circleClip)"/>
+  <ellipse cx="200" cy="180" rx="70"  ry="108" fill="none" stroke="#00B4D8" stroke-width="1" opacity="0.4" clip-path="url(#circleClip)"/>
+  <!-- Prime meridian (brighter) -->
+  <ellipse cx="200" cy="180" rx="1"   ry="108" fill="none" stroke="#00B4D8" stroke-width="1.5" opacity="0.7" clip-path="url(#circleClip)"/>
+
+  <!-- Continents (stylised shapes — India-centric) -->
+  <!-- South Asia blob -->
+  <path d="M195 158 Q205 155 215 162 Q222 172 218 185 Q212 195 205 198 Q196 196 191 185 Q186 172 195 158Z"
+        fill="#00B4D8" opacity="0.55"/>
+  <!-- East Asia blob -->
+  <path d="M230 148 Q245 145 255 152 Q260 160 255 168 Q248 172 238 170 Q230 165 230 155Z"
+        fill="#00B4D8" opacity="0.35"/>
+  <!-- Europe/Middle East blob -->
+  <path d="M155 152 Q168 148 175 155 Q178 162 172 168 Q163 170 155 165 Q150 158 155 152Z"
+        fill="#00B4D8" opacity="0.35"/>
+  <!-- Africa blob -->
+  <path d="M162 172 Q172 168 178 178 Q180 192 175 202 Q168 208 160 202 Q154 192 158 180Z"
+        fill="#00B4D8" opacity="0.3"/>
+
+  <!-- Globe outer ring with glow -->
+  <circle cx="200" cy="180" r="108" fill="none" stroke="url(#ringGrad)" stroke-width="2.5" filter="url(#glow)"/>
+
+  <!-- ── CROSS / PLUS symbol (health) ── -->
+  <!-- Subtle cross overlay on globe -->
+  <rect x="195" y="158" width="10" height="44" rx="2" fill="#FF6B35" opacity="0.85" filter="url(#glow)"/>
+  <rect x="178" y="175" width="44" height="10" rx="2" fill="#FF6B35" opacity="0.85" filter="url(#glow)"/>
+
+  <!-- ── BOTTOM ACCENT BAR ── -->
+  <rect x="60" y="305" width="280" height="3" rx="1.5" fill="url(#tealGrad)" opacity="0.6"/>
+
+  <!-- ── TEXT: SAHARA ── -->
+  <text x="200" y="346" font-family="Arial Black, Arial, sans-serif" font-weight="900"
+        font-size="52" fill="white" text-anchor="middle" letter-spacing="8"
+        filter="url(#softGlow)">SAHARA</text>
+
+  <!-- ── TEXT: tagline ── -->
+  <text x="200" y="372" font-family="Arial, sans-serif" font-weight="400"
+        font-size="11" fill="#00B4D8" text-anchor="middle" letter-spacing="2.5"
+        opacity="0.9">SURVIVAL · HEALTH · RELIEF</text>
+
+  <!-- Tiny dot accents -->
+  <circle cx="88"  cy="200" r="3" fill="#00B4D8" opacity="0.6"/>
+  <circle cx="312" cy="200" r="3" fill="#00B4D8" opacity="0.6"/>
+  <circle cx="200" cy="72"  r="3" fill="#00B4D8" opacity="0.6"/>
+  <circle cx="200" cy="288" r="3" fill="#00B4D8" opacity="0.6"/>
+</svg>
