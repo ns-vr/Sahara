@@ -1,4 +1,4 @@
-# 🌍 SAHARA
+#  SAHARA
 ### Survival & Health Agent for Relief and Recovery Aid
 **AgentathonX 2026 — HiGen Labs India's First Online AI Agent Hackathon**
 
@@ -11,7 +11,7 @@ SAHARA is a **multi-agent AI system** that activates the moment a disaster hits 
 Every existing disaster tool does ONE thing. SAHARA connects all three:
 
 ```
-🌍 Agent 1          🏥 Agent 2            🆘 Agent 3
+ Agent 1           Agent 2               Agent 3
 Environment   →    Health Triage    →    Relief Coordinator
 Scanner            (disaster-aware)       (hospitals + SOS)
 ```
